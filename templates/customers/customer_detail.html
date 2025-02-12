@@ -9,37 +9,37 @@
         <div class="col-md-6">
             <h2 class="mb-0">{{ customer.name }}</h2>
         </div>
-        <div class="col-md-6 text-end">
+        <div class="col-md-6 text-md-end">
             <a href="{% url 'customer_update' customer.id %}" class="btn btn-primary">Edit</a>
-            <a href="{% url 'customer_list' %}" class="btn btn-secondary">Back to Customers</a>
+            <a href="{% url 'customer_list' %}" class="btn btn-secondary ms-2">Back to Customers</a>
         </div>
     </div>
 
     <!-- Customer Information -->
     <div class="row my-4">
         <div class="col">
-            <div class="card">
+            <div class="card border-0 shadow">
                 <div class="card-body">
-                    <h5 class="card-title">Customer Information</h5>
-                    <div class="customer-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Name:</span>
+                    <h5 class="card-title mb-4">Customer Information</h5>
+                    <div class="customer-details d-flex flex-column gap-2">
+                        <div class="detail-item d-flex align-items-center gap-2">
+                            <span class="detail-label fw-bold" style="min-width: 100px;">Name:</span>
                             <span class="detail-value">{{ customer.name }}</span>
                         </div>
-                        <div class="detail-item">
-                            <span class="detail-label">VAT ID:</span>
+                        <div class="detail-item d-flex align-items-center gap-2">
+                            <span class="detail-label fw-bold" style="min-width: 100px;">VAT ID:</span>
                             <span class="detail-value">{{ customer.vat_id }}</span>
                         </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Street:</span>
+                        <div class="detail-item d-flex align-items-center gap-2">
+                            <span class="detail-label fw-bold" style="min-width: 100px;">Street:</span>
                             <span class="detail-value">{{ customer.street }}</span>
                         </div>
-                        <div class="detail-item">
-                            <span class="detail-label">City:</span>
+                        <div class="detail-item d-flex align-items-center gap-2">
+                            <span class="detail-label fw-bold" style="min-width: 100px;">City:</span>
                             <span class="detail-value">{{ customer.city }}</span>
                         </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Country:</span>
+                        <div class="detail-item d-flex align-items-center gap-2">
+                            <span class="detail-label fw-bold" style="min-width: 100px;">Country:</span>
                             <span class="detail-value">{{ customer.country }}</span>
                         </div>
                     </div>
@@ -48,38 +48,4 @@
         </div>
     </div>
 </div>
-
-<style>
-    .customer-details {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    } */
-
-    .detail-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .detail-label {
-        font-weight: bold;
-        min-width: 100px;
-    }
-
-    .detail-value {
-        flex-grow: 1;
-    }
-
-    .card {
-        border: none;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .card-title {
-        margin-bottom: 20px;
-        font-size: 1.5rem;
-        color: #333;
-    }
-</style>
 {% endblock %}
